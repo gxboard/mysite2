@@ -1,6 +1,7 @@
 package kr.co.saramin.mvc;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ public class MVCUtil {
 		RequestDispatcher rd = request.getRequestDispatcher(path);
 		rd.forward(request, response);
 	}
+	
 
 	public static Long validLong( String value, Long defaultValue ) {
 		return ( value != null && value.matches("[-+]?\\d*\\.?\\d+") ) ? Long.parseLong( value ) : defaultValue;

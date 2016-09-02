@@ -1,4 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@page import="kr.co.saramin.mysite.vo.GuestbookVo"%>
+<%@page import="java.util.List"%>
+<%@page contentType="text/html;charset=UTF-8" %>
+<%
+List<GuestbookVo> list = (List<GuestbookVo>) request.getAttribute("list");
+%>
 <!doctype html>
 <html>
 <head>
@@ -36,23 +41,23 @@
 					</table>
 				</form>
 				<ul>
+				<c:set var="count" value="{fn:length(list)}" />
+				<c:forEach items="${list }" var="vo" varStatus="status">
 					<li>
 						<table>
 							<tr>
-								<td>[4]</td>
-								<td>안대혁</td>
-								<td>2015-11-10 11:22:30</td>
-								<td><a href="">삭제</a></td>
+								<td>[${status.index} : ${status.count}]</td>
+								<td>${vo.name }</td>
+								<td>${vo.regDate}</td>
+								<td><a href="${request.contextPath}/guestbook?a=deleteform&no=${vo.no}">삭제</a></td>
 							</tr>
 							<tr>
-								<td colspan=4>
-								안녕하세요. ^^;<br>
-								하하하하	
-								</td>
+								<td colspan=4>${vo.message}</td>
 							</tr>
 						</table>
 						<br>
 					</li>
+				</c:forEach>
 				</ul>
 			</div>
 		</div>

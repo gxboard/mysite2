@@ -111,7 +111,7 @@ public class GuestbookDao {
 		PreparedStatement pstmt = null;
 		try{
 			conn = getConnection();
-			String sql = "DELETE FROM guestbook WHERE no = ? AND passwd = password(?)";
+			String sql = "DELETE FROM guestbook WHERE no = ? AND password = password(?)";
 			pstmt = conn.prepareStatement( sql );
 			pstmt.setLong( 1,  vo.getNo() );
 			pstmt.setString( 2, vo.getPassword() );

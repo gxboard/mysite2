@@ -2,14 +2,14 @@
 <!doctype html>
 <html>
 <head>
-<title>mysite</title>
+<title>mysite2</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="<%=request.getContextPath() %>/assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><a href="/mysite">MySite</a></h1>
+			<h1><a href="/mysite">MySite2</a></h1>
 			<ul>
 				<li><a href="">로그인</a><li>
 				<li><a href="">회원가입</a><li>
@@ -28,7 +28,7 @@
 						메뉴는  사이트 소개, 방명록, 게시판이 있습니다.<br>
 						JAVA 수업 + 데이터베이스 수업 + Servlet/JSP + Spring MVC + JPA(Hibernate) 수업 배운 거 있는거 없는 거 다 합쳐서
 						만들어 놓은 사이트 입니다.<br><br>
-						<a href="#">방명록</a>에 글 남기기<br>
+						<a href="<%=request.getContextPath() %>/guestbook">방명록</a>에 글 남기기<br>
 					</p>
 				</div>
 			</div>

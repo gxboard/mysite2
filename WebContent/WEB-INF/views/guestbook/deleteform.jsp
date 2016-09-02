@@ -1,4 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%
+
+
+%>
 <!doctype html>
 <html>
 <head>
@@ -20,9 +24,10 @@
 		</div>
 		<div id="content">
 			<div id="guestbook" class="delete-form">
-				<form method="" action="">
+				<form method="POST" action="questbook/delete">
 					<label>비밀번호</label>
-					<input type="password" name="password">
+					<input type="hidden"   name="no" value="">
+					<input type="password" name="password" value="">
 					<input type="submit" value="확인">
 				</form>
 				<a href="">방명록 리스트</a>
