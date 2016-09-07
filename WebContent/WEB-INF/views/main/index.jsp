@@ -5,6 +5,7 @@
 <title>mysite2</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <link href="<%=request.getContextPath() %>/assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath }">
 </head>
 <body>
 	<div id="container">

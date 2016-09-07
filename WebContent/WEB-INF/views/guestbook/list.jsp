@@ -1,8 +1,10 @@
 <%@page import="kr.co.saramin.mysite.vo.GuestbookVo"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%
-List<GuestbookVo> list = (List<GuestbookVo>) request.getAttribute("list");
+// List<GuestbookVo> list = (List<GuestbookVo>) request.getAttribute("list");
 %>
 <!doctype html>
 <html>
@@ -41,15 +43,15 @@ List<GuestbookVo> list = (List<GuestbookVo>) request.getAttribute("list");
 					</table>
 				</form>
 				<ul>
-				<c:set var="count" value="{fn:length(list)}" />
-				<c:forEach items="${list }" var="vo" varStatus="status">
+				<c:set var="count" value="${fn:length(list)}" />
+				<c:forEach items="${list}" var="vo" varStatus="status">
 					<li>
 						<table>
 							<tr>
-								<td>[${status.index} : ${status.count}]</td>
+								<td>[${status.count}/${count}]</td>
 								<td>${vo.name }</td>
 								<td>${vo.regDate}</td>
-								<td><a href="${request.contextPath}/guestbook?a=deleteform&no=${vo.no}">삭제</a></td>
+								<td><a href="${contextPath}/guestbook?a=deleteform&no=${vo.no}">삭제</a></td>
 							</tr>
 							<tr>
 								<td colspan=4>${vo.message}</td>
